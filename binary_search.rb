@@ -3,7 +3,7 @@ def binary_search(arr, num)
   stop = arr.length - 1
 
   while start <= stop
-    mid = start + (stop - start) / 2
+    mid = (start + stop) / 2
 
     if arr[mid] < num
       start = mid + 1
