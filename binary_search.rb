@@ -25,8 +25,10 @@ def binary_search_recursive(arr, num)
   mid = (start + stop) / 2
 
   if arr[mid] < num
-    mid + 1 + binary_search_recursive(arr[mid + 1..stop], num)
+    result = binary_search_recursive(arr[mid + 1..stop], num)
+    result ? mid + 1 + result : result
   elsif arr[mid] > num
+    return nil if start == mid
     binary_search_recursive(arr[start..mid - 1], num)
   else
     mid
